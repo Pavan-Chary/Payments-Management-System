@@ -9,8 +9,8 @@ export default createStore({
 
     //State
     state: {
-        currentUserId:120,
-        currentTransactionId:600,
+        currentUserId: 120,
+        currentTransactionId: 600,
 
         users: [
             {
@@ -42,11 +42,11 @@ export default createStore({
         transactions: [
             {
                 paymentId: "TXN-5001A",
-                userEmail: "anvitha.rao@hydmail.in", 
+                userEmail: "anvitha.rao@hydmail.in",
                 amount: 25000.00,
-                method:  PaymentMethod.UPI,
+                method: PaymentMethod.UPI,
                 status: TransactionStatus.COMPLETED,
-                createdAt: new Date(2026, 1, 1, 10, 30) 
+                createdAt: new Date(2026, 1, 1, 10, 30)
             },
             {
                 paymentId: "TXN-5002B",
@@ -60,7 +60,7 @@ export default createStore({
                 paymentId: "TXN-5003C",
                 userEmail: "anvitha.rao@hydmail.in",
                 amount: 500.00,
-                method:  PaymentMethod.UPI,
+                method: PaymentMethod.UPI,
                 status: TransactionStatus.REFUNDED,
                 createdAt: new Date(2026, 1, 3, 9, 0)
             },
@@ -68,7 +68,7 @@ export default createStore({
                 paymentId: "TXN-5004D",
                 userEmail: "osman.pasha@charminar.org",
                 amount: 12000.00,
-                method:  PaymentMethod.CREDIT_CARD,
+                method: PaymentMethod.CREDIT_CARD,
                 status: TransactionStatus.FAILED,
                 createdAt: new Date(2026, 1, 4, 16, 45)
             },
@@ -76,7 +76,7 @@ export default createStore({
                 paymentId: "TXN-5005E",
                 userEmail: "kavitha.g@warangal-fin.co",
                 amount: 850.00,
-                method:  PaymentMethod.UPI,
+                method: PaymentMethod.UPI,
                 status: TransactionStatus.COMPLETED,
                 createdAt: new Date(2026, 1, 4, 18, 20)
             }
@@ -87,11 +87,11 @@ export default createStore({
     //Getters
     getters: {
 
-        getUsers(state:any) {
+        getUsers(state: any) {
             return state.users;
         },
 
-        getTransactions(state:any) {
+        getTransactions(state: any) {
             return state.transactions;
         }
 
@@ -101,22 +101,22 @@ export default createStore({
     //Mutations => commits
     mutations: {
 
-        addUser(state:any, user: User) {
+        addUser(state: any, user: User) {
 
-            user.userId=state.currentUserId;
+            user.userId = state.currentUserId;
             state.currentUserId++;
-            const filteredUsers = state.users.filter((_user:User) => _user.email === user.email);
-            if (filteredUsers.length != 0){throw Error("User Already exists");} 
+            const filteredUsers = state.users.filter((_user: User) => _user.email === user.email);
+            if (filteredUsers.length != 0) { throw Error("User Already exists"); }
             state.users.push(user);
 
         },
 
-        addTransaction(state:any, transaction:Transaction){
+        addTransaction(state: any, transaction: Transaction) {
 
             const filteredTransactions = state.transactions.filter(
-                (_transaction:Transaction)=>_transaction.paymentId === transaction.paymentId
+                (_transaction: Transaction) => _transaction.paymentId === transaction.paymentId
             )
-            if(filteredTransactions.length !=0 ){
+            if (filteredTransactions.length != 0) {
                 throw Error("Transaction Already exists");
             }
 
@@ -125,11 +125,11 @@ export default createStore({
         },
 
 
-        updateTransaction(state:any, transaction:Transaction){
+        updateTransaction(state: any, transaction: Transaction) {
 
-            for(let currentTransaction of state.transactions){
-                if(currentTransaction.paymentId==transaction.paymentId){
-                    currentTransaction.status=transaction.status;
+            for (let currentTransaction of state.transactions) {
+                if (currentTransaction.paymentId == transaction.paymentId) {
+                    currentTransaction.status = transaction.status;
                 }
             }
         }

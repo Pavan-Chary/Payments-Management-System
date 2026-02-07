@@ -1,5 +1,7 @@
 <template>
+
   <div class="min-h-screen bg-slate-50 p-8 font-sans">
+
     <div class="max-w-6xl mx-auto">
       
       <div class="flex justify-between items-center mb-8">
@@ -8,13 +10,15 @@
           <p class="text-slate-500 text-xs font-black uppercase tracking-widest mt-1">Transaction Ledger</p>
         </div>
         <router-link 
-          to="/transaction-registration" 
+          to="/payment-registration" 
           class="bg-slate-900 no-underline text-white px-6 py-3 rounded-xl font-black text-sm hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200 uppercase tracking-widest"
         >
           Register Payment
         </router-link>
       </div>
 
+      <!-- Filters -->
+       
       <div class="bg-white border border-slate-200 rounded-2xl p-6 mb-8 shadow-sm">
         <h2 class="text-xs font-black uppercase text-slate-400 tracking-widest mb-6 flex items-center">
           Refine Transactions
@@ -49,6 +53,8 @@
 
         </div>
       </div>
+
+      <!-- Payments List -->
 
       <div class="space-y-3">
         <div class="px-6 py-3 flex text-[10px] font-black uppercase text-slate-400 tracking-widest">

@@ -12,35 +12,35 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: [
     {
-      path:'/',
-      name:'Home',
-      component:Home
+      path: '/',
+      name: 'Home',
+      component: Home
     },
     {
-      path:'/users',
-      name:'UsersView',
-      component:UsersView
+      path: '/users',
+      name: 'UsersView',
+      component: UsersView
     },
     {
-      path:'/payments',
-      name:'TransactionView',
-      component:TransactionView
+      path: '/payments',
+      name: 'TransactionView',
+      component: TransactionView
     },
     {
-      path:'/payments/:paymentId',
-      name:'IndividualTransactionView',
-      component:IndividualTransactionView,
-      props:true
+      path: '/payments/:paymentId',
+      name: 'IndividualTransactionView',
+      component: IndividualTransactionView,
+      props: true
     },
     {
-      path:'/payment-registration',
-      name:'TransactionRegistration',
-      component:TransactionRegistration,
+      path: '/payment-registration',
+      name: 'TransactionRegistration',
+      component: TransactionRegistration,
     },
     {
-      path:'/user-registration',
-      name:'UserRegistration',
-      component:UserRegistration,
+      path: '/user-registration',
+      name: 'UserRegistration',
+      component: UserRegistration,
     }
   ],
 })
