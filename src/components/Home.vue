@@ -5,28 +5,3 @@
 <span><h1 class="text-[20px]">PAYMENT MANAGEMENT SYSTEM</h1></span>
 </template>
 
-<script lang="ts">
-
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-
-    //Data
-    data(){
-    return{};
-    },
-
-    //Methods
-    methods:{
-
-    },
-
-    //Computed
-    computed:{
-
-    }
-
-
-});
-
-</script>
